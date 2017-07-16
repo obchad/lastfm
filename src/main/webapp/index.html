@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="lastfmApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Redballon Coding Exercise</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.6.5/angular-route.min.js"></script>
+<script src="js/app.js"></script>
+
+</head>
+<body>
+ <div class="container" ng-controller="fetchArtistController">
+ 	<div class="row">
+        <div class="col-md-6">
+    		<h2>List artists by country</h2>
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" placeholder="Search" ng-model="country"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button" ng-click="searchArtist()">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+	</div>
+	<br/><br/>
+	<div class="row" ng-show="message!= null">
+	  <span>{{message}}</span>
+	</div>
+    <table class="table table-bordered table-striped" ng-hide="results == null">
+      <thead>
+          <tr>
+	       <th>ID</th>
+	       <th>Name</th>
+	       <th>Price</th>
+	       <th>Quantity</th>
+	       <th>Country</th>
+   	      </tr>  
+      </thead>
+      <tbody>
+        <tr ng-repeat="t in results.track">
+          <td>{{t.id}}</td>
+          <td>{{t.name}}</td>
+          <td>{{t.price}}</td>
+          <td>{{t.quantity}}</td>
+          <td>{{t.country}}</td>
+       </tr>
+     </tbody>
+ </table>
+ </div>
+
+
+
+
+</body>
+</html>

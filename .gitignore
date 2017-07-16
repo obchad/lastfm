@@ -14,7 +14,6 @@
 
 # Package Files #
 *.jar
-*.war
 *.ear
 *.zip
 *.tar.gz
@@ -69,3 +68,5 @@ fabric.properties
 /.idea/
 /target/
 /musicbox.iml
+!/target/music-box-1.0-SNAPSHOT.war
+src/main/resources/
