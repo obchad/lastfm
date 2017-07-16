@@ -4,8 +4,8 @@ package utils; /**
 
 import de.umass.lastfm.Artist;
 import de.umass.lastfm.ImageSize;
+import org.junit.Ignore;
 import org.junit.Test;
-import utils.LastFmUtils;
 
 import java.util.Collection;
 
@@ -17,7 +17,7 @@ public class LastFmUtilsTest {
 
         System.out.println("TEST - testPaging");
 
-        int screenPage = 23;
+        int screenPage = 8;
         String country = "australia";
         Collection<Artist> artists = LastFmUtils.getArtistsByCountryAndPage(country, screenPage);
 
@@ -34,6 +34,7 @@ public class LastFmUtilsTest {
     }
 
     @Test
+    @Ignore
     public void testGetTop50Artists() {
         System.out.println("TEST - getTop50");
         String country = "australia";

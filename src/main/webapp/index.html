@@ -34,20 +34,17 @@
     <table class="table table-bordered table-striped" ng-hide="results == null">
       <thead>
           <tr>
-	       <th>ID</th>
-	       <th>Name</th>
-	       <th>Price</th>
-	       <th>Quantity</th>
-	       <th>Country</th>
+	       <th>Artist</th>
+	       <th>Thumbnail</th>
+	       <th>Top Tracks link</th>
    	      </tr>  
       </thead>
       <tbody>
         <tr ng-repeat="t in results.artist">
-          <td>{{t.id}}</td>
+
           <td>{{t.name}}</td>
-          <td>{{t.price}}</td>
-          <td>{{t.quantity}}</td>
-          <td>{{t.country}}</td>
+          <td>{{t.thumbnailUrl}}</td>
+          <td>{{t.topTracksUrl}}</td>
        </tr>
      </tbody>
  </table>
