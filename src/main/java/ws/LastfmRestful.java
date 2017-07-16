@@ -24,8 +24,6 @@ public class LastfmRestful {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/artists")
     public Response findArtistsByCountry(@QueryParam("country") String country, @QueryParam("start") int start) {
-//		ArtistService service = new ArtistService();
-//		List<Artist> results = service.getArtistsByCountryPaginated(country, start);
 
         List<DisplayArtists> results = new ArrayList<>();
 
