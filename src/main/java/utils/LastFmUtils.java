@@ -62,11 +62,6 @@ public class LastFmUtils {
         int startCounter = ((subPage - 1) * 5) + 1;
         int endCounter = ((subPage - 1) * 5) + 5;
 
-
-        System.out.println("ScreenPage: " + screenPage + ", Page: " + page + ", SubPage: " + subPage);
-        System.out.println("startCounter: " + startCounter + " , endCounter: " + endCounter);
-
-
         int counter = 1;
         for (Artist artist : artists) {
             if ((counter >= startCounter) && (counter <= endCounter)) {
