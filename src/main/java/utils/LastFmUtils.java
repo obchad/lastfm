@@ -1,3 +1,5 @@
+package utils;
+
 import de.umass.lastfm.*;
 import de.umass.util.MapUtilities;
 
@@ -20,7 +22,7 @@ import java.util.Map;
 // Keep in mind that your solution should work efficiently,no matter how many results match the keyword.
 
 
-public class Music {
+public class LastFmUtils {
 
 
     private final static String key = "ccf7e29521f6632b0b73a3303fbc04a7"; //this is the key used in the Last.fm API examples
