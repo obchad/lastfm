@@ -5,10 +5,7 @@ import de.umass.lastfm.ImageSize;
 import entities.DisplayArtists;
 import utils.LastFmUtils;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -19,11 +16,10 @@ import java.util.List;
 @Path("lastfm")
 public class LastfmRestful {
 
-
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/artists")
-    public Response findArtistsByCountry(@QueryParam("country") String country, @QueryParam("start") int start) {
+    @Path("/artists/{country}")
+    public Response findTracksByCountry(@PathParam("country") String country, @QueryParam("start") int start) {
 
         List<DisplayArtists> results = new ArrayList<>();
 
@@ -40,5 +36,4 @@ public class LastfmRestful {
                 .build();
 
     }
-
 }
