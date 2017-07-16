@@ -1,6 +1,7 @@
 package ws;
 
 import de.umass.lastfm.Artist;
+import de.umass.lastfm.ImageSize;
 import entities.DisplayArtists;
 import utils.LastFmUtils;
 
@@ -30,7 +31,8 @@ public class LastfmRestful {
 
 		Collection<Artist> artistsByCountryAndPage = LastFmUtils.getArtistsByCountryAndPage(country, start);
 		for (Artist artist : artistsByCountryAndPage) {
-			// TODO MAPPING
+
+			results.add(new DisplayArtists(artist.getName(), artist.getImageURL(ImageSize.SMALL), artist.getUrl()));
 		}
 
 
