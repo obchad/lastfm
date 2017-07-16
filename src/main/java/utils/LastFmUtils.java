@@ -59,9 +59,8 @@ public class LastFmUtils {
         Collection<Artist> artists = artistsByPage.getPageResults();
         Collection<Artist> artistsByScreenPage = new ArrayList<Artist>();
         int subPage = (screenPage % 10);
-        int startCounter = ((subPage-1) * 5) + 1;
-        int endCounter = ((subPage-1) * 5) + 5;
-
+        int startCounter = ((subPage - 1) * 5) + 1;
+        int endCounter = ((subPage - 1) * 5) + 5;
 
 
         System.out.println("ScreenPage: " + screenPage + ", Page: " + page + ", SubPage: " + subPage);

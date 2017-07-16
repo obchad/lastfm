@@ -18,30 +18,29 @@ import java.util.List;
 
 @Path("lastfm")
 public class LastfmRestful {
-	
 
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/artists")
-	public Response findArtistsByCountry(@QueryParam("country") String country, @QueryParam("start") int start) {
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/artists")
+    public Response findArtistsByCountry(@QueryParam("country") String country, @QueryParam("start") int start) {
 //		ArtistService service = new ArtistService();
 //		List<Artist> results = service.getArtistsByCountryPaginated(country, start);
 
-		List<DisplayArtists> results = new ArrayList<>();
+        List<DisplayArtists> results = new ArrayList<>();
 
-		Collection<Artist> artistsByCountryAndPage = LastFmUtils.getArtistsByCountryAndPage(country, start);
-		for (Artist artist : artistsByCountryAndPage) {
+        Collection<Artist> artistsByCountryAndPage = LastFmUtils.getArtistsByCountryAndPage(country, start);
+        for (Artist artist : artistsByCountryAndPage) {
 
-			results.add(new DisplayArtists(artist.getName(), artist.getImageURL(ImageSize.SMALL), artist.getUrl()));
-		}
+            results.add(new DisplayArtists(artist.getName(), artist.getImageURL(ImageSize.SMALL), artist.getUrl()));
+        }
 
+        return Response.ok().entity(new GenericEntity<List<DisplayArtists>>(results) {
+        })
+                .header("Access-Control-Allow-Origin", "*")
+                .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS, HEAD")
+                .build();
 
-
-		return Response.ok().entity(new GenericEntity<List<DisplayArtists>>(results) {})
-				.header("Access-Control-Allow-Origin", "*")
-				.header("Access-Control-Allow-Methods",  "GET, POST, DELETE, PUT, OPTIONS, HEAD")
-				.build();
-				
-	}
+    }
 
 }
