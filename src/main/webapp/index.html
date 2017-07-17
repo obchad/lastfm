@@ -19,7 +19,8 @@
             <h2>Top Artists by Country</h2>
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
-                    <input type="text" class="form-control input-lg" placeholder="Search" ng-model="country"/>
+                    <input type="text" class="form-control input-lg" placeholder="Search" ng-model="country"
+                           ng-change="resetPage()"/>
                     <span class="input-group-btn">
                         <button class="btn btn-info btn-lg" type="button" ng-click="searchArtist()">
                             <i class="glyphicon glyphicon-search"></i>
@@ -56,7 +57,5 @@
         </button>
     </div>
 </div>
-
-
 </body>
 </html>
