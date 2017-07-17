@@ -9,7 +9,7 @@ lastfmApp.controller('fetchArtistController', function ($scope, $http) {
         $http({
             method: 'GET',
             params: {start: $scope.startPosition},
-            url: 'http://localhost:8080/LastFmRedBallon/rest/lastfm/artists/' + $scope.country + '?start=' + $scope.main.page
+            url: 'http://localhost:8080/LastFm/rest/lastfm/artists/' + $scope.country + '?start=' + $scope.main.page
         }).then(function (response) {
             if (response.data == null) {
                 $scope.message = "No artist found";
