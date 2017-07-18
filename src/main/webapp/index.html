@@ -2,7 +2,7 @@
 <html ng-app="lastfmApp">
 <head>
     <meta charset="ISO-8859-1">
-    <title>Redballon Coding Exercise</title>
+    <title>LAST FM</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
@@ -17,17 +17,19 @@
     <div class="row">
         <div class="col-md-6">
             <h2>Top Artists by Country</h2>
-            <div id="custom-search-input">
+
+            <form ng-submit="searchArtist()">
+
                 <div class="input-group col-md-12">
                     <input type="text" class="form-control input-lg" placeholder="Search" ng-model="country"
                            ng-change="resetPage()"/>
                     <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button" ng-click="searchArtist()">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
+                       <input type="submit" id="submit" value="Submit" class="btn btn-info btn-lg">
+                           <i class="glyphicon glyphicon-search"></i>
+                        </input>
                     </span>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <br/><br/>

@@ -38,5 +38,3 @@ lastfmApp.controller('fetchArtistController', function ($scope, $http) {
         }
     };
 });
-			
-		 
