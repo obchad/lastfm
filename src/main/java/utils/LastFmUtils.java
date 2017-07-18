@@ -52,7 +52,11 @@ public class LastFmUtils {
         Map<String, String> params = new HashMap<String, String>();
         params.put("page", String.valueOf(page));
         MapUtilities.nullSafePut(params, "country", country);
-        Result result = Caller.getInstance().call("geo.getTopArtists", key, params);
+
+        Caller instance = Caller.getInstance();
+        instance.setCache(null);
+
+        Result result = instance.call("geo.getTopArtists", key, params);
 
         PaginatedResult<Artist> artistsByPage = ResponseBuilder.buildPaginatedResult(result, Artist.class);
 
